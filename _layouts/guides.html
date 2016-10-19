@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+
+
+    <div class="page-content">
+      {% include site-header.html %}
+      <h1 class="centered">Guides</h1>
+      {% loopdir path:"guides/" match:"*.md" sort:"title" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
+           <div class="guide centered">
+
+               <a class="guide-link" href="../{{ urlPath }}">
+                  <h3>{{ item.title }}</h3>
+
+               </a>
+
+
+           </div>
+
+           {% endloopdir %}
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>OpenFirmware Tips n&#39; Tricks</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+  <link rel="stylesheet" href="/ppcarchive/css/main.css">
+  <link rel="canonical" href="http://128keaton.com//ppcarchive/guides/of_tips.html">
+  <link rel="alternate" type="application/rss+xml" title="PowerPC Archive" href="http://128keaton.com//ppcarchive/feed.xml">
+</head>
+
+
+  <body>
+
+
+
+    <div class="page-content">
+        <div class="header">
+      <a class="welcome-link" href="/ppcarchive/"><h2 class="welcome-header">PowerPC Archive</h2></a>
+
+      <div class="extra-header">
+          <a class="other-header" href="/ppcarchive/guides/">guides</a><p class="other-inner">/</p><a class="other-header" href="https://powerpccentre.wordpress.com">blog</a><p class="other-inner">/</p><a class="other-header" href="#">about</a>
+      </div>
+
+    </div>
+
+        <h1 class="page-title">OpenFirmware Tips n' Tricks</h1>
+        <p>We figured these may be of some use too! OF is useful for a handful of things, take a look!
+To access Open Firmware, immediately after pressing the power button, hold down Command+Option+O+F</p>
+
+<h2 id="eject-a-cd">Eject A CD</h2>
+<p>This one’s easy, and we found it useful with a stubborn iMac G4!</p>
+
+<p><code class="highlighter-rouge">eject cd</code></p>
+
+<h2 id="boot-off-a-cd">Boot Off A CD</h2>
+
+<p>Sometimes holding alt down to select a startup item fails, when in doubt, use this!</p>
+
+<p><code class="highlighter-rouge">boot cd:,\\:tbxi</code></p>
+
+<h2 id="boot-mac-normally">Boot Mac Normally</h2>
+
+<p>Sometimes you may be defaulted to boot into OF, use this to boot up!</p>
+
+<p><code class="highlighter-rouge">mac-boot</code></p>
+
+<h2 id="boot-off-a-usb-flash-drive">Boot Off A USB Flash Drive</h2>
+
+<p>You’ll need to make sure your flash drive is good to go, with the APM (Apple Partition Map) and is restored properly. To do this, read our guide (coming soon!).</p>
+
+<h2 id="find-boot-rom-version">Find Boot Rom Version</h2>
+<p>This is useful if you need to quickly find the Boot Rom version if you are most likely doing a CPU swap in a G5.</p>
+
+<p>When you access OF, look at the top and you’ll see the version!</p>
+
+<h2 id="enabledisable-of">Enable/Disable OF</h2>
+
+<p>This is a good know-how, as it allows you to set a password so that someone can’t mess with your OF!</p>
+
+<p><strong>Enable:</strong></p>
+
+<ol>
+  <li>type <code class="highlighter-rouge">password</code>
+You’ll be prompted to create a password.
+Type it in, and again to verify.</li>
+  <li>type <code class="highlighter-rouge">setenv security-mode full</code></li>
+  <li>type <code class="highlighter-rouge">reset-all</code> to reboot the mac</li>
+</ol>
+
+<p><strong>Disable:</strong></p>
+
+<ol>
+  <li>type <code class="highlighter-rouge">setenv security-mode</code> none
+   enter your old password</li>
+  <li>type <code class="highlighter-rouge">reset-all</code> to reboot the mac</li>
+</ol>
+
+
+    </div>
+    <a class="home" href="/">Home</a>
+    <div class="footer">
+          <p class="footer-text">&copy; 2013-2016, PowerPC Archive & PowerPC Centre</p>
+      </div>
+
+
+  </body>
+
+</html>

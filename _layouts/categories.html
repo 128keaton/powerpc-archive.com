@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+
+
+    <div class="page-content">
+      {% include site-header.html %}
+        <div class="categories">
+      <h1 class="centered">Categories</h1>
+      {% loopdir path:"categories/" match: "*.*" sort:"title" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
+
+             <div class="category">
+                 <div class="category-icon"><img src="/ppcarchive/img/app-icons/{{ item.icon }}"></div>
+                   <a class="category-link" href="/ppcarchive/{{ item.title }}">
+                 {{ item.title }}
+                      </a>
+             </div>
+
+
+
+           {% endloopdir %}
+    </div>
+  </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

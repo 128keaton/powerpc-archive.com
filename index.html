@@ -1,0 +1,26 @@
+---
+layout: home
+---
+<div class="upper-content">
+            <div class="spotlight-content"><img class="spotlight-img" src="img/spotlight.png"></div>
+        </div>
+
+        <div class="categories">
+
+          {% loopdir path:"categories/" match: "*.*" sort:"weight" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
+
+                 <div class="category">
+                     <div class="category-icon"><img src="/img/app-icons/{{ item.icon }}"></div>
+                       <a class="category-link" href="{{ item.permalink }}">
+                     {{ item.title }}
+                          </a>
+                 </div>
+
+
+
+               {% endloopdir %}
+        </div>
+
+        <div class="extra">
+            <a class="other" href="/ppcarchive/guides/">guides</a><p class="inner">/</p><a class="other" href="https://powerpccentre.wordpress.com">blog</a><p class="inner">/</p><a class="other" href="#">about</a>
+        </div>
