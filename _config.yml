@@ -12,6 +12,7 @@ email: keaton.burleson@me.com
 baseurl: "" # the subpath of your site, e.g. /blog
 # Build settings
 markdown: kramdown
+root: /
 collections:
   categories:
     output: true
