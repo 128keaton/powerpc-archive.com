@@ -10,14 +10,14 @@ icon: essentials.png
   {% if item.category contains "essentials" %}
   {% assign category = "essentials" %}
        <div class="app">
-           <div class="app-icon"><img src="/img/app-icons/{{ item.icon }}"></div>
+           <div class="app-icon"><img src="img/app-icons/{{ item.icon }}"></div>
 
            <p>{{ item.title }}</p>
            {% if item.download-leopard %}
-              <a class="download-link-leopard" href="{{ item.download-leopard }}"><img class="download-img" src="/img/download.gif">Leopard</a>
-                <a class="download-link-tiger" href="{{ item.download-tiger }}"><img class="download-img" src="/img/download.gif">Tiger</a>
+              <a class="download-link-leopard" href="{{ item.download-leopard }}"><img class="download-img" src="img/download.gif">Leopard</a>
+                <a class="download-link-tiger" href="{{ item.download-tiger }}"><img class="download-img" src="img/download.gif">Tiger</a>
            {% else %}
-              <a class="download-link" href="{{ item.download }}"><img class="download-img" src="/img/download.gif">Download</a>
+              <a class="download-link" href="{{ item.download }}"><img class="download-img" src="img/download.gif">Download</a>
            {% endif %}
 
            {% if item.download-leopard %}
