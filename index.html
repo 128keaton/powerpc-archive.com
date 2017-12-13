@@ -10,7 +10,7 @@ layout: home
           {% for item in site.categories %}
                  <div class="category">
                      <div class="category-icon"><img src="img/app-icons/{{ item.icon }}"></div>
-                       <a class="category-link" href="{{ item.permalink }}">
+                       <a class="category-link" href="{{ item.permalink  | prepend: site.baseurl }}">
                      {{ item.title }}
                           </a>
                  </div>
