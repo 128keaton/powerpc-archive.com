@@ -1,23 +1,23 @@
 ---
 layout: default
-title: Utilities
-permalink: /utilities/
-weight: 4
-icon: utilities.gif
+title: Essentials
+permalink: /essentials/
+weight: 1
+icon: essentials.png
 ---
 <div class="apps">
-{% loopdir path:"apps/" match:"*.md" sort:"weight" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
-  {% if item.category contains "utilities" %}
-
+  {% for item in site.apps %}
+  {% if item.category contains "essentials" %}
+  {% assign category = "essentials" %}
        <div class="app">
-           <div class="app-icon"><img src="/ppcarchive/img/app-icons/{{ item.icon }}"></div>
+           <div class="app-icon"><img src="/img/app-icons/{{ item.icon }}"></div>
 
            <p>{{ item.title }}</p>
            {% if item.download-leopard %}
-              <a class="download-link-leopard" href="{{ item.download-leopard }}"><img class="download-img" src="/ppcarchive/img/download.gif">Leopard</a>
-                <a class="download-link-tiger" href="{{ item.download-tiger }}"><img class="download-img" src="/ppcarchive/img/download.gif">Tiger</a>
+              <a class="download-link-leopard" href="{{ item.download-leopard }}"><img class="download-img" src="/img/download.gif">Leopard</a>
+                <a class="download-link-tiger" href="{{ item.download-tiger }}"><img class="download-img" src="/img/download.gif">Tiger</a>
            {% else %}
-              <a class="download-link" href="{{ item.download }}"><img class="download-img" src="/ppcarchive/img/download.gif">Download</a>
+              <a class="download-link" href="{{ item.download }}"><img class="download-img" src="/img/download.gif">Download</a>
            {% endif %}
 
            {% if item.download-leopard %}
@@ -40,5 +40,5 @@ icon: utilities.gif
 
 {% endif %}
 
-     {% endloopdir %}
+     {% endfor %}
    </div>

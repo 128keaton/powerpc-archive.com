@@ -7,12 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Make Leopard Faster On A G4</title>
-  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-">
 
-  <link rel="stylesheet" href="/ppcarchive/css/main.css">
-  <link rel="canonical" href="http://128keaton.com//ppcarchive/guides/tune_a_leopard_for_g4.html">
-  <link rel="alternate" type="application/rss+xml" title="PowerPC Archive" href="http://128keaton.com//ppcarchive/feed.xml">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/guides/tune_a_leopard_for_g4.html">
+  <link rel="alternate" type="application/rss+xml" title="PowerPC Archive" href="http://localhost:4000/feed.xml">
 </head>
 
 
@@ -22,10 +20,10 @@
 
     <div class="page-content">
         <div class="header">
-      <a class="welcome-link" href="/ppcarchive/"><h2 class="welcome-header">PowerPC Archive</h2></a>
+      <a class="welcome-link" href="/"><h2 class="welcome-header">PowerPC Archive</h2></a>
 
       <div class="extra-header">
-          <a class="other-header" href="/ppcarchive/guides/">guides</a><p class="other-inner">/</p><a class="other-header" href="https://powerpccentre.wordpress.com">blog</a><p class="other-inner">/</p><a class="other-header" href="#">about</a>
+          <a class="other-header" href="/guides/">guides</a><p class="other-inner">/</p><a class="other-header" href="https://powerpccentre.wordpress.com">blog</a><p class="other-inner">/</p><a class="other-header" href="#">about</a>
       </div>
 
     </div>
@@ -41,7 +39,7 @@ After installing Leopard to it, performance was really bad. So I made this guide
 <p>Well, first off make sure your G4 mac has a 867MHz or faster processor (there are ways to make it install on
 almost any G4, stay tuned for that guide), and appropriate RAM. Then install Leopard to it. Upon running leopard for the first time it’s extremely slow!</p>
 
-<h3 id="install-software-updates">1. Install Software Updates</h3>
+<h3 id="1-install-software-updates">1. Install Software Updates</h3>
 
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/5840341.png?162" alt="" /></p>
 
@@ -49,7 +47,7 @@ almost any G4, stay tuned for that guide), and appropriate RAM. Then install Leo
 
 <p>This way if you have devices such as a magic mouse or wireless keyboard, it will download the latest software to enable scrolling, media keys, etc. This will also provide the latest security updates and patches that allow you to run iLife 09 or iWork 09.</p>
 
-<h3 id="disable-spotlight-dashboard">2. Disable Spotlight, Dashboard</h3>
+<h3 id="2-disable-spotlight-dashboard">2. Disable Spotlight, Dashboard</h3>
 
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/3198154.png?163" alt="" /></p>
 
@@ -59,20 +57,20 @@ almost any G4, stay tuned for that guide), and appropriate RAM. Then install Leo
 Disable Spotlight
 This is not recommended if you have Time Machine enabled.Go to Applications, Utilities, then Terminal.  Paste this command:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo launchctl unload -w
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>launchctl unload <span class="nt">-w</span>
 /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.Spotlight.plist</code></pre></figure>
+<span class="nb">sudo </span>launchctl unload <span class="nt">-w</span> /System/Library/LaunchAgents/com.apple.Spotlight.plist</code></pre></figure>
 
 <p>to disable Spotlight, to re-enable run this:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-sudo launchctl load -w /System/Library/LaunchAgents/com.apple.Spotlight.plist</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>launchctl load <span class="nt">-w</span> /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+<span class="nb">sudo </span>launchctl load <span class="nt">-w</span> /System/Library/LaunchAgents/com.apple.Spotlight.plist</code></pre></figure>
 
 <p>Restart your Mac to see changes.
 Disable Dashboard
 Go to Applications, Utilities, then Terminal.  Paste this command:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dashboard mcx-disabled -boolean YES; killall Dock</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">defaults write com.apple.dashboard mcx-disabled <span class="nt">-boolean</span> YES<span class="p">;</span> killall Dock</code></pre></figure>
 
 <p>Which will close dashboard and restart the Dock.</p>
 
@@ -80,7 +78,7 @@ Go to Applications, Utilities, then Terminal.  Paste this command:</p>
 defaults write com.apple.dashboard mcx-disabled -boolean NO; killall Dock
 Which will close dashboard and restart the Dock.</p>
 
-<h3 id="animations-and-effects-in-the-gui">3. Animations And Effects In The GUI</h3>
+<h3 id="3-animations-and-effects-in-the-gui">3. Animations And Effects In The GUI</h3>
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/1627635.png?1380266085" alt="" /></p>
 
 <p>Behind Spotlight and Dashboard, animations also can take a toll on performance. For example, minimizing a window uses quite a bit of your graphics resources. Disabling the “gloss” will make the window hide quicker and keep the GPU from stressing itself out and burning up. This “eye candy” (similar to Windows Vista’s Aero) needs extreme amounts of horsepower to run correctly.</p>
@@ -111,12 +109,12 @@ defaults write com.apple.dock no-glass -boolean NO; killall Dock</p>
 <code class="highlighter-rouge"> File Edit View </code> menu will be clear. Run this to make it matte-like.
 Go to Terminal and Paste:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">sudo defaults write /System/Library/LaunchDaemons/com.apple.WindowServer
-<span class="s1">'EnvironmentVariables'</span> -dict <span class="s1">'CI_NO_BACKGROUND_IMAGE'</span> 1</code></pre></figure>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">sudo </span>defaults write /System/Library/LaunchDaemons/com.apple.WindowServer
+<span class="s1">'EnvironmentVariables'</span> <span class="nt">-dict</span> <span class="s1">'CI_NO_BACKGROUND_IMAGE'</span> 1</code></pre></figure>
 
 <p>Then restart your computer.</p>
 
-<h3 id="power--performance">4. Power &amp; Performance</h3>
+<h3 id="4-power--performance">4. Power &amp; Performance</h3>
 
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/4963395.png" alt="" /></p>
 
@@ -124,7 +122,7 @@ Go to Terminal and Paste:</p>
 
 <p>Go to System Preferences, Energy Saver. Then select your power options.</p>
 
-<h3 id="install-modern-software">5. Install Modern Software</h3>
+<h3 id="5-install-modern-software">5. Install Modern Software</h3>
 
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/209119752.jpg" alt="" /></p>
 
@@ -132,7 +130,7 @@ Go to Terminal and Paste:</p>
 Extras
 There are some people that want even more for their Mac speed or hard drive space. Check below for extras that will make your Mac even better!</p>
 
-<h3 id="remove-extra-languages--architecture-code-optional">6. Remove Extra Languages &amp; Architecture Code (optional)</h3>
+<h3 id="6-remove-extra-languages--architecture-code-optional">6. Remove Extra Languages &amp; Architecture Code (optional)</h3>
 <p><img src="http://ppcarchive.dyniform.net/uploads/6/8/4/0/6840558/2916619.png" alt="" /></p>
 
 <p>This is a good idea if you need more space on your hard drive (if you have a small HDD in your Power/iBook G4) and need to save some space. Monolingual (you need a PPC version, check out Utilities) which will strip down extra languages (of your choice) from your applications. This will remove the Intel code and strip applications strictly for PowerPC.</p>

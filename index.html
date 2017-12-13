@@ -7,18 +7,14 @@ layout: home
 
         <div class="categories">
 
-          {% loopdir path:"categories/" match: "*.*" sort:"weight" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
-
+          {% for item in site.categories %}
                  <div class="category">
                      <div class="category-icon"><img src="/img/app-icons/{{ item.icon }}"></div>
                        <a class="category-link" href="{{ item.permalink }}">
                      {{ item.title }}
                           </a>
                  </div>
-
-
-
-               {% endloopdir %}
+               {% endfor %}
         </div>
 
         <div class="extra">

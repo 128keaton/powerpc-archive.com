@@ -116,7 +116,8 @@ pre {
 .header {
   width: 80%;
   margin: 0 auto;
-  clear: both; }
+  clear: both;
+  overflow: hidden; }
 
 .header a {
   color: black;
@@ -165,7 +166,7 @@ pre {
 .page-content {
   display: block;
   position: relative;
-  width: 50%;
+  width: 85%;
   margin: 0 auto;
   overflow: hidden; }
 
@@ -359,6 +360,34 @@ a.guide-link {
   color: gray;
   text-align: center; }
 
+@media screen and (max-width: 600px) {
+  .page-content {
+    width: 100%; }
+
+  .spanner {
+    display: none; }
+
+  .welcome-link {
+    width: 100%;
+    text-align: center; }
+
+  .welcome-link h2 {
+    font-size: 30px !important; }
+
+  .extra {
+    width: 100%; }
+
+  .upper-content {
+    display: none; }
+
+  .categories {
+    margin-top: 10px; } }
+@media screen and (max-width: 800px) {
+  .page-content {
+    width: 95%; }
+
+  .categories {
+    max-width: 100%; } }
 /**
  * Syntax highlighting styles
  */

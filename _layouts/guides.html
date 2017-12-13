@@ -10,7 +10,7 @@
     <div class="page-content">
       {% include site-header.html %}
       <h1 class="centered">Guides</h1>
-      {% loopdir path:"guides/" match:"*.md" sort:"title" %} {% assign post = item %} {% assign urlPath = post.path | replace: 'md', 'html' %}
+      {% for item in site.guides %}
            <div class="guide centered">
 
                <a class="guide-link" href="../{{ urlPath }}">
@@ -21,7 +21,7 @@
 
            </div>
 
-           {% endloopdir %}
+           {% endfor %}
     </div>
 
     {% include footer.html %}
