@@ -9,10 +9,9 @@
 include: ['_pages', 'categories', 'guides', 'categories/apps/']
 title: PowerPC Archive
 email: keaton.burleson@me.com
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/powerpc-archive.com" # the subpath of your site, e.g. /blog
 # Build settings
 markdown: kramdown
-root: /
 collections:
   categories:
     output: true
