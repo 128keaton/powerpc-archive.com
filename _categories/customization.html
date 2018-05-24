@@ -5,34 +5,4 @@ permalink: /customization/
 weight: 4
 icon: customization.png
 ---
-<div class="apps">
-  {% for item in site.apps %}
-  {% if item.category == "customization" %}
-  <div class="app">
-    <div class="app-icon"><img src="{{ 'img/'  | prepend: site.baseurl }}app-icons/{{ item.category }}/{{ item.icon }}"></div>
-    <p>{{ item.title }}</p>
-    {% if item.download-leopard %}
-      <a class="download-link-leopard" href="{{ item.download-leopard }}"><img class="download-img" src="{{ 'img/'  | prepend: site.baseurl }}download.gif">Leopard</a>
-      <a class="download-link-tiger" href="{{ item.download-tiger }}"><img class="download-img" src="{{ 'img/'  | prepend: site.baseurl }}download.gif">Tiger</a>
-    {% else %}
-      <a class="download-link" href="{{ item.download }}"><img class="download-img" src="{{ 'img/'  | prepend: site.baseurl }}download.gif">Download</a>
-    {% endif %}
-    {% if item.download-leopard %}
-      <br>
-      <a class="download-mirror-2" href="{{ item.download-mirror-leopard }}">Mirror</a>
-      <a class="download-mirror-2" href="{{ item.download-mirror-tiger }}">Mirror</a>
-    {% else %}
-    {% if item.download-mirror %}
-     <a class="download-mirror" href="{{ item.download-mirror }}">Mirror</a>
-    {% else %}
-      <a class="download-mirror-disabled">Mirror (not available)</a>
-    {% endif %}
-    {% endif %}
-      <p class="requirements">Requirements:</p>
-      <p class="osx-compat"> {{ item.compat-osx }}</p>
-      <p class="cpu-compat"> {{ item.compat-cpu }}</p>
-      <p class="description">{{ item.description }}</p>
-    </div>
-  {% endif %}
-  {% endfor %}
-</div>
+{% include category.html %}
